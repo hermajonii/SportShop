@@ -86,7 +86,7 @@
             
         </div>
         <nav class="navbar p-0 navbar-expand-md navbar-dark text-dark" style='z-index:1 !important'>
-            <a class="navbar-brand" href="index.php"><img src="../pictures/baner.png" height='70px' alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="../pictures/logo.png" height='70px' alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>

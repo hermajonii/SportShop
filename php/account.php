@@ -72,7 +72,7 @@
             
         </div>
         <nav class="navbar p-0 navbar-expand-md navbar-dark text-dark" style='z-index:1 !important'>
-            <a class="navbar-brand" href="index.php"><img src="../pictures/baner.png" height='70px' alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="../pictures/logo.png" height='70px' alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -175,7 +175,7 @@
 
                     $user=unserialize($_SESSION['user']);
                 ?>
-                    <h2 class='underline1 p-2' style='color: rgb(54, 201, 170)'>Dobro došli, <?php echo $user->username;?></h2>   
+                    <h2 class='underline1 p-2' >Dobro došli, <?php echo $user->username;?></h2>   
                     <form class="form-inline p-2 m-2 text-right">
                         <div class="form-group w-100">
                             <label for="firstNameAccount" class='p-2 m-2 w-50'> Ime:</label>&nbsp;
@@ -198,22 +198,22 @@
                             <input type="phone" class="w-25 p-2" disabled value="<?php echo $user->phoneNumber;?>" id="phoneAccount">
                         </div>
                     </form>
-                    <a class="btn btn-success font-weight-bold w-50 mt-3 p-2" data-toggle="collapse" href="#collapseAddress" role="button" aria-expanded="false" aria-controls="collapseAddress">
+                    <a class="btn btn-success font-weight-bold mt-3 p-2" data-toggle="collapse" href="#collapseAddress" role="button" aria-expanded="false" aria-controls="collapseAddress">
                         Promenite adresu dostave <i class='fa fa-arrow-down'></i>
                     </a>
                     <div class="collapse" id="collapseAddress">
-                        <div class="card card-body w-50 p-2">
+                        <div class="card card-body w-75 p-2">
                             <label for="addressNew" class='p-0 m-0'> Nova adresa:</label>
                             <input type="text" id="addressNew" class='m-0'>
                             <button class='p-2 btn btn-warning m-2 font-weight-bold' id="changeAddress">PROMENI ADRESU</button>
                         </div>
                     </div>
                     <br>
-                    <a class="btn btn-danger font-weight-bold w-50 my-2 p-2" data-toggle="collapse" href="#collapsePassword" role="button" aria-expanded="false" aria-controls="collapsePassword">
+                    <a class="btn btn-danger font-weight-bold my-2 p-2" data-toggle="collapse" href="#collapsePassword" role="button" aria-expanded="false" aria-controls="collapsePassword">
                         Promenite lozinku <i class='fa fa-arrow-down'></i>
                     </a>
                     <div class="collapse" id="collapsePassword">
-                        <div class="card card-body w-50 p-2">
+                        <div class="card card-body w-75 p-2">
                             <label for="oldPasswordChange" class='p-0 m-0'>Stara lozinka:</label>
                             <input type="password" id="oldPasswordChange">
                             <label for="passwordChange" class='p-0 m-0 mt-1'>Nova lozinka:</label>

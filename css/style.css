@@ -127,8 +127,7 @@ a{
 }
 .tabs ul li a.active{
     color: black !important;
-    font-weight: 900;
-    background-color: #ffc107;
+    font-weight: 900;   
     
 }
 .frmWrite input{
