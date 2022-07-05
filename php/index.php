@@ -299,7 +299,7 @@
             </div> 
         </div>
     </div>
-    <footer class='page-footer p-0'>
+    <footer class='page-footer p-0 container-fluid'>
         <div class='container-fluid'>
             <div class='row p-2'>
                 <div class="col-lg-4 col-sm-12 ml-0 mt-3">

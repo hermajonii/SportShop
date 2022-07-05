@@ -18,8 +18,8 @@
     <link rel="stylesheet" href= "../css/font-awesome-4.7.0/css/font-awesome.css">
     <script src= "../css/bootstrap-4.3.1-dist/js/bootstrap.js"> </script>
 </head>
-<body>
-    <div class='container-fluid'>
+<body class="d-flex flex-column min-vh-100">
+    <div class='container-fluid wrapper flex-grow-1'>
         <div class="modal fade" id="modalCookies" role="dialog" >
             <div class="modal-dialog container modal-lg">
                 <div class="modal-content">
@@ -226,62 +226,62 @@
                 </div>
             </div>
         </div>
-        <footer class='page-footer p-0'>
-            <div class='container-fluid'>
-                <div class='row p-2'>
-                    <div class="col-lg-4 col-sm-12 ml-0 mt-3">
-                        <div class="footerSocial text-center">
-                                <h3 class='text-light mt-4'>POVEŽITE SE</h3>
-                                <p class='m-0 p-0'>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-twitter fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-facebook fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-instagram fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-dribbble fa-lg"></i>
-                                    </a>
-                                </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">
-                        <h5 class="text-uppercase text-warning underline1 pb-2">KONTAKT</h5>
-                        <ul class="list-unstyled text-light p-2">
-                            <li class="my-2">
-                                <a href="#!"  class='text-light'><i class="fa fa-address-book text-warning fa-lg"></i> +31 416 652803</a>
-                            </li>
-                            <li class="my-2">
-                                <a href="#!" class='text-light'><i class="fa fa-envelope text-warning fa-lh"></i> info@sportshop.com</a>
-                            </li>
-                            <li class="my-2">
-                                <a href="#!"  class='text-light'><i class="fa fa-map-marker text-warning fa-lg"></i> Sportshop.com, Kralja Petra 1, Beograd 11000</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">
-                        <h5 class="text-uppercase text-warning underline1 pb-2">INFORMACIJE</h5>
-                        <ul class="list-unstyled text-light p-2">
-                            <li class="my-2">
-                                <a href="aboutUs.php#about"  class='text-light'><i class="fa fa-search text-warning fa-lg mr-1" aria-hidden="true"></i>O nama</a>
-                            </li>
-                            <li class="my-2">
-                                <a href="aboutUs.php#questions" class='text-light'><i class="fa fa-question text-warning fa-lg mr-2" aria-hidden="true"></i> Često postavljana pitanja</a>
-                            </li>
-                            <li class="my-2">
-                                <a href="aboutUs.php#write"  class='text-light'><i class="fa fa-comments text-warning fa-lg" aria-hidden="true"></i> Žalbe i sugestije</a>
-                            </li>
-                        </ul>
+    </div>
+    <footer class='page-footer mx-3'>
+        <div class='container-fluid'>
+            <div class='row p-2'>
+                <div class="col-lg-4 col-sm-12 ml-0 mt-3">
+                    <div class="footerSocial text-center">
+                            <h3 class='text-light mt-4'>POVEŽITE SE</h3>
+                            <p class='m-0 p-0'>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-twitter fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-facebook fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-instagram fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-dribbble fa-lg"></i>
+                                </a>
+                            </p>
                     </div>
                 </div>
+                <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">
+                    <h5 class="text-uppercase text-warning underline1 pb-2">KONTAKT</h5>
+                    <ul class="list-unstyled text-light p-2">
+                        <li class="my-2">
+                            <a href="#!"  class='text-light'><i class="fa fa-address-book text-warning fa-lg"></i> +31 416 652803</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#!" class='text-light'><i class="fa fa-envelope text-warning fa-lh"></i> info@sportshop.com</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#!"  class='text-light'><i class="fa fa-map-marker text-warning fa-lg"></i> Sportshop.com, Kralja Petra 1, Beograd 11000</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">
+                    <h5 class="text-uppercase text-warning underline1 pb-2">INFORMACIJE</h5>
+                    <ul class="list-unstyled text-light p-2">
+                        <li class="my-2">
+                            <a href="aboutUs.php#about"  class='text-light'><i class="fa fa-search text-warning fa-lg mr-1" aria-hidden="true"></i>O nama</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="aboutUs.php#questions" class='text-light'><i class="fa fa-question text-warning fa-lg mr-2" aria-hidden="true"></i> Često postavljana pitanja</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="aboutUs.php#write"  class='text-light'><i class="fa fa-comments text-warning fa-lg" aria-hidden="true"></i> Žalbe i sugestije</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-copyright text-center py-3 text-warning m-0">© 2020 <br>Tamara Milić - Završni rad
-            </div>
-        </footer>
-    </div>
+        </div>
+        <div class="footer-copyright text-center py-3 text-warning m-0">© 2020 <br>Tamara Milić - Završni rad
+        </div>
+    </footer>
     <script>
         $(document).ready(function(){
             check=<?php  echo json_encode(isset($_COOKIE['Allowed']));  ?>;

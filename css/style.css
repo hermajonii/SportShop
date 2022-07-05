@@ -1,12 +1,12 @@
 body{
-    background-image: url("../pictures/main.jpg");
+    background-image: url("../pictures/main2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 .navbar, .page-footer, .dropdown-menu, .tabs ul{
-    background-image: url("../pictures/nav2.jpg");
+    background-image: url("../pictures/nav7.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1;
@@ -128,8 +128,8 @@ a{
 .tabs ul li a.active{
     color: black !important;
     font-weight: 900;
-    background-image: url('../pictures/main.jpg');
-    background-size: contain; 
+    background-color: #ffc107;
+    
 }
 .frmWrite input{
     background-color: transparent;
