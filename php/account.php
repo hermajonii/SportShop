@@ -125,11 +125,11 @@
                 ?>
                     <div class="p-2 m-2 " action="tasks.php?task=logIn" method='post'>
                         <div class='row m-2'>
-                            <label for="usernameLog" class='p-2 col-12 col-sm-3'><span class='text-danger font-weight-bold'>* </span> Korisničko ime:</label>
+                            <label for="usernameLog" class='p-2 col-12 col-sm-3'><span class='text-dark font-weight-bold'>* </span> Korisničko ime:</label>
                             <input type="text" class="p-2 col-12 col-sm-4" placeholder="Unesite korisničko ime" id="usernameLog" name="usernameLog"><br>
                         </div>
                         <div class='row m-2'>
-                            <label for="passwordLog" class='p-2 col-12 col-sm-3'><span class='text-danger font-weight-bold'>* </span> Lozinka:</label>
+                            <label for="passwordLog" class='p-2 col-12 col-sm-3'><span class='text-dark font-weight-bold'>* </span> Lozinka:</label>
                             <input type="password" class="p-2 col-12 col-sm-4" placeholder="Unesite lozinku" id="passwordLog" name='passwordLog'><br>
                         </div>
                         <button class="btn btn-warning btnShow m-2" id='logIn'>Uloguj se</button>
@@ -138,33 +138,33 @@
                 <div class="tab-pane fade" id="menu2">
                     <div class="p-2 text-left row"> 
                         <div class="col-12 col-sm-6">
-                            <label for="firstName" class='p-2 m-1 w-100 text-left'> <span class='text-danger font-weight-bold'>*</span> Ime:</label>&nbsp;
+                            <label for="firstName" class='p-2 m-1 w-100 text-left'> <span class='text-dark font-weight-bold'>*</span> Ime:</label>&nbsp;
                             <input type="text" class="p-2 w-75" placeholder="Unesite ime" id="firstName" name="firstName">
                      
-                            <label for="lastName" class='p-2 m-1 w-100 text-left'> <span class='text-danger font-weight-bold'>*</span> Prezime:</label>&nbsp;
+                            <label for="lastName" class='p-2 m-1 w-100 text-left'> <span class='text-dark font-weight-bold'>*</span> Prezime:</label>&nbsp;
                             <input type="text" class="p-2 w-75" placeholder="Unesite prezime" id="lastName" name="lastName">
                         
-                            <label for="address" class='p-2 m-1 w-100 text-left'> <span class='text-danger font-weight-bold'>*</span> Adresa:</label>&nbsp;
+                            <label for="address" class='p-2 m-1 w-100 text-left'> <span class='text-dark font-weight-bold'>*</span> Adresa:</label>&nbsp;
                             <input type="text" class="p-2 w-75" placeholder="Unesite adresu" id="address" name="address">
                      
                             <label for="email" class='p-2 m-1 w-100 text-left'> E-mail:</label>&nbsp;
                             <input type="email" class="p-2 w-75" placeholder="Unesite e-mail" id="email" name="email">
                         </div>
                         <div class="col-12 col-sm-6">
-                            <label for="phone" class='p-2 m-1 w-100 text-left'> <span class='text-danger font-weight-bold'>*</span> Broj telefona  :</label>&nbsp;
+                            <label for="phone" class='p-2 m-1 w-100 text-left'> <span class='text-dark font-weight-bold'>*</span> Broj telefona  :</label>&nbsp;
                             <input type="text" class="p-2 w-75" placeholder="06x/xxx-xxx(x)" id="phone" name="phone">
                       
-                            <label for="usernameSign" class='p-2 m-1 w-100 text-left'> <span class='text-danger font-weight-bold'>*</span> Korisničko ime:</label>&nbsp;
+                            <label for="usernameSign" class='p-2 m-1 w-100 text-left'> <span class='text-dark font-weight-bold'>*</span> Korisničko ime:</label>&nbsp;
                             <input type="text" class="p-2 w-75" placeholder="Unesite korisničko ime" id="usernameSign" name="usernameSign">
                         
-                            <label for="passwordSign" class='p-2 m-1 w-100 text-left'> <span class='text-danger font-weight-bold'>*</span> Lozinka:</label>&nbsp;
+                            <label for="passwordSign" class='p-2 m-1 w-100 text-left'> <span class='text-dark font-weight-bold'>*</span> Lozinka:</label>&nbsp;
                             <input type="password" class="p-2 w-75" placeholder="Unesite lozinku" id="passwordSign" name="passwordSign">
                         
-                            <label for="passwordSignCheck" class='p-2 m-1 w-100 text-left'> <span class='text-danger font-weight-bold'>*</span> Potvrdi lozinku:</label>&nbsp;
+                            <label for="passwordSignCheck" class='p-2 m-1 w-100 text-left'> <span class='text-dark font-weight-bold'>*</span> Potvrdi lozinku:</label>&nbsp;
                             <input type="password" class="p-2 w-75" placeholder="Potvrdi lozinku" id="passwordSignCheck" name="passwordSignCheck">
                         </div>
                     </div>
-                    <input type="checkbox" id="chkSign" name='chkSign' class="p-2 m-2"><label for="chkSign">Slažem se sa <a href="termsAndConditions.php" class='text-info font-weight-bold'> uslovima korišćenja </a></label><br>
+                    <input type="checkbox" id="chkSign" name='chkSign' class="p-2 m-2"><label for="chkSign">Slažem se sa <a href="termsAndConditions.php" class='text-warning font-weight-bold'> uslovima korišćenja </a></label><br>
                     <button class="btn btn-warning m-2 btnShow" id='signIn'>Napravite nalog</button>
                 </div>
                 <?php

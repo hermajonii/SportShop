@@ -1,9 +1,13 @@
 body{
-    background-image: url("../pictures/main2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background: hsla(180, 7%, 59%, 1);
+
+    background: linear-gradient(0deg, #807B7B 0%, hsla(0, 0%, 96%, 1) 50%, #807B7B 100%);
+
+    background: -moz-linear-gradient(0deg, #807B7B 0%, hsla(0, 0%, 96%, 1) 50%, #807B7B 100%);
+
+    background: -webkit-linear-gradient(0deg, #807B7B 0%, hsla(0, 0%, 96%, 1) 50%, #807B7B 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#909E9E", endColorstr="#F6F6F6", GradientType=1 );
 }
 .navbar, .page-footer, .dropdown-menu, .tabs ul{
     background-image: url("../pictures/nav7.jpg");

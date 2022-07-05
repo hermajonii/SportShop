@@ -153,10 +153,10 @@
                 <?php
                     $con=getConnection();
                     if($con){
-                        echo "<h3 class='p-2 underline1' style='color: rgb(54, 201, 170)'>".$resultItem['nameItem']."</h3 class='p-2 m-1'>";
+                        echo "<h2 class='p-2 underline1' style='color: #ffc107; text-shadow: 2px 2px 2px black'>".$resultItem['nameItem']."</h2>";
                         echo  "<div class='text-center'><a href='items.php?idBrand=".$resultItem['idBrand']."'><img src='../pictures/".$resultItem['pictureBrand']."' id='brandPhoto' alt='' class='img img-thumbnail w-50 mb-5 align-self-center'></a></div>";
                         if($resultItem['discount']>0){
-                            echo '<h4 class="col-12 align-self-center border-0 pl-0"><del class="text-secondary">'.$resultItem['price'].' RSD </del><span class=" badge badge-2x font-weight-bold text-dark bg-danger mt-4 mb-2 p-2">-'.$resultItem['discount'].'%</span><br><b>'.round($resultItem['price']*((100-intval($resultItem['discount']))/100),2).' RSD </b></h4>';
+                            echo '<h4 class="col-12 align-self-center border-0 pl-0"><del class="text-secondary">'.$resultItem['price'].' RSD </del><span class=" badge badge-2x font-weight-bold text-light bg-danger mt-4 mb-2 p-2">-'.$resultItem['discount'].'%</span><br><b>'.round($resultItem['price']*((100-intval($resultItem['discount']))/100),2).' RSD </b></h4>';
                         }
                         else
                             echo '<h4 class="col-12 align-self-center border-0 pl-0"><b>'.round($resultItem['price'],2).' RSD</b></h4>';
