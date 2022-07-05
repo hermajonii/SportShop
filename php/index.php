@@ -71,7 +71,7 @@
             </ul>
             
         </div>
-        <nav class="navbar p-0 navbar-expand-md navbar-dark text-dark" style='z-index:1 !important'>
+        <nav class="navbar navbar-expand-md navbar-dark text-dark m-0 p-0" style='z-index:1 !important'>
             <a class="navbar-brand" href="index.php"><img src="../pictures/logo.png" height='70px' alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -88,7 +88,7 @@
                             }
                     ?>
                     <li class="nav-item p-1"> 
-                        <div class="nav-item dropdown position-static p-0"> 
+                        <div class="nav-item dropdown position-static p-0" > 
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> BRENDOVI</a>                                
                             <div class="dropdown-menu m-0 p-0 w-100 shadow border-outline-success" aria-labelledby="navbarDropdown"> 
                                 <div class='row col-12 px-0 mr-0 pl-3'>
@@ -114,7 +114,7 @@
                 </ul> 
             </div> 
         </nav>
-        <div class='row'>    
+        <div class='row m-0'>    
             <div id="carouselExampleSlidesOnly" class="carousel slide mb-5 col-12" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -273,7 +273,7 @@
                 </div>
             </div>
         </div>
-        <div class='row m-2'> 
+        <div class='row m-2 w-100'> 
             <div class="col-md-4 col-12">
                 <div class="d-flex align-items-end" style="background-image:url('../pictures/men1.jpg');background-size:cover;height:20rem">
                     <a href="items.php?gender=male">
@@ -284,7 +284,7 @@
                 </div>
             </div>  
             <div class="col-md-4 col-12"> 
-                <a href="items.php?discount=20">
+                <a href="items.php?discount=40,30,23,20,15">
                     <img class="img-responsive" src="../pictures/sale00.png" width='100%' height='300px' alt="">
                 </a>
             </div>  
