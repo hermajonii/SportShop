@@ -109,7 +109,7 @@
         <div class='row mt-2 mx-1'>
             <div class='col-12 col-md-8'>
                 <h1 id='about' class='text-warning underline'>O NAMA</h1>
-                    <div class='text-justify p-2'>Kompanija N Sport je jedan od vodećih distributera najpoznatijih sportskih i modnih brendova sa više od 60 prodajnih objekata na teritoriji Srbije i Bosne i Hercegovine.
+                <div class='text-justify p-2'>Kompanija N Sport je jedan od vodećih distributera najpoznatijih sportskih i modnih brendova sa više od 60 prodajnih objekata na teritoriji Srbije i Bosne i Hercegovine.
                     Usmereni smo na zadovoljenje potreba kupaca i omogućavamo da individualnost svakog pojedinca bude prikazana i kroz lični stil, jer on predstavlja odraz nečije ličnosti i načina života. Iz tog razloga N Sport pruža otpor konvencionalnosti i skreće pažnju na različitost i jedinstvenost svake osobe.
                     <br><hr>
                     Kompanija je prepoznatljiva po svoja tri osnovna prodajna multibrend koncepta: N Sport, N Fashion i N Selection.
@@ -120,23 +120,22 @@
                     <br><hr>
                     N Selection koncept je inspirisan urbanim ritmom svetskih metropola i predstavlja najbolje od svetskih modnih i sportskih brendova kao što su PUMA Prime i Select linije, adidas Originals, Nike, Tommy Hilfiger, Guess, Replay, Armani Exchange, Bogner, Trussardi Jeans...    </div>
                 </div>
-            <div class="col-md-4 col-12">
+            <div class="col-md-4 col-12 m-0 p-0">
                 <div class='row'>
-                    <div class="m-2">
-                        <div class="selection">
+                    <div class="m-2 w-100">
+                        <div class="selection w-100">
                             <img class="img-responsive" src="../pictures/phone.jpg" width='100%' height='300px' alt="">
                             <h2 class='text-warning'>CALL CENTAR</h2>
-                            <div class="font-weight-bold text-light ">
-                                Dostupni smo telefonom svakog radnog dana od 9h do 21h. 
-                                <br>U subotu možete nas kontaktirati od 09h do 15h.
+                            <div class="font-weight-bold text-light mt-3">
+                                Dostupni smo telefonom svakog radnog dana od 9h do 21h i subotom od 09h do 15h.
                                 <br>
-                                <button class='btn btn-large bg-warning text-dark mt-3 font-weight-bold btnShow'>+31 416 652803</button>
+                                <button class='btn btn-large bg-warning text-dark font-weight-bold btnShow mt-2'>+31 416 652803</button>
                             </div>
                         </div>
                     </div>  
-                    <div class="m-2">
+                    <div class="m-2 w-100">
                         <a href='items.php?discount=20'>
-                            <img class="img-responsive" src="../pictures/sale00.png" width='100%' height='300px' alt="">
+                            <img class="img-responsive w-100" src="../pictures/sale00.png" width='100%' height='300px' alt="">
                         </a>
                     </div>  
                 </div>
@@ -146,7 +145,7 @@
             <div class="container text-center my-3">
                 <?php
                     if($result1){
-                        echo '<h3 class="text-warning">IZABERITE VAŠ OMILJENI BREND</h3>
+                        echo '<h3 class="text-warning" style=" text-shadow: 2px 2px 0.7px black;">IZABERITE VAŠ OMILJENI BREND</h3>
                         <div id="recipeCarousel" class="carousel slide w-100 h-100" data-ride="carousel">
                             <div class="carousel-inner w-100 " role="listbox">';
                         $counter=0;$converse="";
@@ -194,13 +193,13 @@
                                     echo '<div class="card">
                                     <div class="card-header " id="heading'.$count.'">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-link text-dark  text-decoration-none" data-toggle="collapse" data-target="#collapse'.$count.'" aria-expanded="true" aria-controls="collapse'.$count.'">
+                                            <button class="btn btn-link text-dark  text-decoration-none text-left" data-toggle="collapse" data-target="#collapse'.$count.'" aria-expanded="true" aria-controls="collapse'.$count.'">
                                                 '.$arr[0].'
                                             </button>
                                         </h5>
                                     </div>
                                     <div id="collapse'.$count.'" class="collapse" aria-labelledby="heading'.$count.'" data-parent="#accordion">
-                                        <div class="card-body">
+                                        <div class="card-body text-left">
                                             '.$arr[1].'
                                         </div>
                                     </div>
@@ -214,16 +213,16 @@
             </div>
         </div>
         <div class='row mt-2 mb-3 mx-1'>
-            <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-6 col-xs-12 ">
                 <div class='row'>
-                    <div class="selection">
+                    <div class="selection w-100 m-2">
                         <img class="img-responsive" src="../pictures/new.jpg" width='100%' height='300px' alt="">
                         <div class="info text-warning font-weight-bold"><hr>
                             <span class='text-light font-lg'> NOVO! </span> POGLEDAJTE NAŠU NOVU KOLEKCIJU! <span class='text-light font-lg'> NOVO! </span> <br>
                             <a href="items.php"><button class='btn btn-large bg-warning text-dark mt-3 font-weight-bold btnShow'>KUPUJ SAD</button></a>
                         </div>
                     </div>
-                    <div class="selection">
+                    <div class="selection w-100 m-2">
                         <img class="img-responsive" src="../pictures/converse1.jpg" width='100%' height='300px' alt="">
                         <div class="info text-light font-weight-bold"><hr>
                                 POGLEDAJTE NAŠU NOVU CONVERSE KOLEKCIJU! <br>
@@ -251,21 +250,21 @@
                 <div class='row p-2'>
                     <div class="col-lg-4 col-sm-12 ml-0 mt-3">
                         <div class="footerSocial text-center">
-                                <h3 class='text-light mt-4'>POVEŽITE SE</h3>
-                                <p class='m-0 p-0'>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-twitter fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-facebook fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-instagram fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-dribbble fa-lg"></i>
-                                    </a>
-                                </p>
+                            <h3 class='text-light mt-4'>POVEŽITE SE</h3>
+                            <p class='m-0 p-0'>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-twitter fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-facebook fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-instagram fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-dribbble fa-lg"></i>
+                                </a>
+                            </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">
@@ -318,7 +317,7 @@
                 }
                 else
                     alert("Niste uneli sve informacije!");
-           });
+            });
             $(document).ready(function(){
                 check=<?php  echo json_encode(isset($_COOKIE['Allowed']));  ?>;
                 if(!check)

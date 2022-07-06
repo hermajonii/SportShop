@@ -156,10 +156,10 @@
                         echo "<h2 class='p-2 underline1' style='color: #ffc107; text-shadow: 2px 2px 2px black'>".$resultItem['nameItem']."</h2>";
                         echo  "<div class='text-center'><a href='items.php?idBrand=".$resultItem['idBrand']."'><img src='../pictures/".$resultItem['pictureBrand']."' id='brandPhoto' alt='' class='img img-thumbnail w-50 mb-5 align-self-center'></a></div>";
                         if($resultItem['discount']>0){
-                            echo '<h4 class="col-12 align-self-center border-0 pl-0"><del class="text-secondary">'.$resultItem['price'].' RSD </del><span class=" badge badge-2x font-weight-bold text-light bg-danger mt-4 mb-2 p-2">-'.$resultItem['discount'].'%</span><br><b>'.round($resultItem['price']*((100-intval($resultItem['discount']))/100),2).' RSD </b></h4>';
+                            echo '<h4 class="col-12 align-self-center border-0 pl-0"><del class="text-secondary">'.$resultItem['price'].' RSD </del><span class=" badge badge-2x font-weight-bold text-light bg-danger mt-4 mb-2 p-2">-'.$resultItem['discount'].'%</span><br><b>'.number_format($resultItem['price']*((100-intval($resultItem['discount']))/100),2,".","").' RSD </b></h4>';
                         }
                         else
-                            echo '<h4 class="col-12 align-self-center border-0 pl-0"><b>'.round($resultItem['price'],2).' RSD</b></h4>';
+                            echo '<h4 class="col-12 align-self-center border-0 pl-0"><b>'.number_format($resultItem['price'],2,".","").' RSD</b></h4>';
                         
                         echo "<p class='font-weight-bold mt-5 mb-2'>1. IZABERITE VAŠU VELIČINU: </p><select name='size' id='size' class='form-control' onchange='changeQuantity(this.value); enableAdding();'><option value='0'>--izaberite veličinu--</option>";
                         $sizes=[];
@@ -201,21 +201,21 @@
                 <div class='row p-2'>
                     <div class="col-lg-4 col-sm-12 ml-0 mt-3">
                         <div class="footerSocial text-center">
-                                <h3 class='text-light mt-4'>POVEŽITE SE</h3>
-                                <p class='m-0 p-0'>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-twitter fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-facebook fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-instagram fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-dribbble fa-lg"></i>
-                                    </a>
-                                </p>
+                            <h3 class='text-light mt-4'>POVEŽITE SE</h3>
+                            <p class='m-0 p-0'>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-twitter fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-facebook fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-instagram fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-dribbble fa-lg"></i>
+                                </a>
+                            </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">

@@ -561,14 +561,14 @@
                 str+='<div class="card col-12 col-sm-4 col-md-3 text-center p-0 mb-3 mt-0 item"><a href="item.php?item='+items1[i]['idItem']+'" class="text-dark"><div class="card-body p-1 mb-2">';
                 if(items1[i]['discount']>0)
                     if(items1[i]['discount']>20)
-                        str+='<h3 class="text-dark bg-danger position-absolute t-0 p-1"><span class="badge p-2 text-light">-'+items1[i]['discount']+'%</span></h3>';
+                        str+='<h3 class="text-dark bg-danger position-absolute t-0 p-1 "><span class="badge p-2 text-light">-'+items1[i]['discount']+'%</span></h3>';
                     else 
-                    str+='<h3 class="text-dark badgeBlue position-absolute t-0 p-1"><span class="badge p-2 text-light">-'+items1[i]['discount']+'%</span></h3>';
-                str+='<img class="card-img-top p-3" src="../pictures/'+items1[i]['urlPicture']+'" alt="Card image cap" style="height:60%"><h6 class="card-title font-weight-bold p-2 mb-0" style="height:3rem; color: rgb(54, 201, 170)">'+items1[i]['nameItem']+'</h6></a><a href="items.php?idBrand='+items1[i]['idBrand']+'" class="col-12"><img src="../pictures/'+items1[i]['pictureBrand']+'" class="w-25"></a>';  
+                        str+='<h3 class="text-dark badgeBlue position-absolute t-0 p-1"><span class="badge p-2 text-light">-'+items1[i]['discount']+'%</span></h3>';
+                str+='<img class="card-img-top p-3 " src="../pictures/'+items1[i]['urlPicture']+'" alt="Card image cap" style="height:60%"><h6 class="card-title font-weight-bold p-2 mb-3" style="height:3rem; color: rgb(54, 201, 170)">'+items1[i]['nameItem']+'</h6></a><a href="items.php?idBrand='+items1[i]['idBrand']+'" class="col-12"><img src="../pictures/'+items1[i]['pictureBrand']+'" class="w-25"></a>';  
                 if(items1[i]['discount']>0)
-                    str+='<h6 class="col-12 border-0 pl-0 pt-4"><del class="text-secondary">'+items1[i]['price']+'RSD</del> <b> '+(items1[i]['price']*((100-parseInt(items1[i]['discount']))/100)).toFixed(2)+' RSD </b></h6>';  
+                    str+='<h6 class="col-12 border-0 px-0 pt-4"><del class="text-secondary">'+items1[i]['price']+'RSD</del> <b> '+(items1[i]['price']*((100-parseInt(items1[i]['discount']))/100)).toFixed(2)+' RSD </b></h6>';  
                 else
-                    str+='<h6 class="col-12 border-0 pl-0 pt-4"><b>'+parseFloat(items1[i]['price']).toFixed(2)+' RSD</b></h6>';
+                    str+='<h6 class="col-12 border-0 px-0 pt-4"><b>'+parseFloat(items1[i]['price']).toFixed(2)+' RSD</b></h6>';
                 str+='</div></div>';
             }
             document.getElementById('items').innerHTML=str;
@@ -591,7 +591,7 @@
                 //da se vidi i jedna stranica pre, ako je poslednja, dve stranice pre
                 if(currPage==1)
                     newCurr=currPage;
-                else if(currPage==Math.ceil(items1.length/itemsPerPage))
+                else if(currPage==Math.ceil(items1.length/itemsPerPage) && currPage!=2)
                     newCurr=currPage-2;
                 else 
                     newCurr=currPage-1;

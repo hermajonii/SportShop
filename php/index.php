@@ -115,7 +115,7 @@
             </div> 
         </nav>
         <div class='row m-0'>    
-            <div id="carouselExampleSlidesOnly" class="carousel slide mb-5 col-12" data-ride="carousel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide mb-5 col-12 p-0" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="../pictures/sale.jpg">
@@ -132,7 +132,7 @@
         <div class='row mt-5 mx-2'>
             <div class="col-md-4 col-sm-12 col-xs-12 mt-2 selection" style="height:300px; background-image:url('../pictures/women3.jpg');padding:0">
                 <h2 class='text-warning'>ŽENE</h2>
-                <div>
+                <div class="mt-3">
                     <?php
                         if($result){
                             mysqli_data_seek($result, 0);
@@ -143,12 +143,12 @@
                             }
                         }
                     ?>
-                    <a href="items.php?gender=female"><button class='btn btn-large btnShop text-dark mt-3 font-weight-bold btnShow'>VIDI SVE</button></a>
+                    <a href="items.php?gender=female"><button class='btn btn-large btnShop text-dark mt-4 font-weight-bold btnShow'>VIDI SVE</button></a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 mt-2 selection" style="height:300px; background-image:url('../pictures/men.jpg');padding:0">
                 <h2 class='text-warning'>MUŠKARCI</h2>
-                <div>
+                <div class="mt-3">
                     <?php
                         if($result){
                             mysqli_data_seek($result, 0);
@@ -159,12 +159,12 @@
                             }
                         }
                     ?>
-                    <a href="items.php?gender=male"><button class='btn btn-large btnShop text-dark mt-3 font-weight-bold btnShow'>VIDI SVE</button></a>
+                    <a href="items.php?gender=male"><button class='btn btn-large btnShop text-dark mt-4 font-weight-bold btnShow'>VIDI SVE</button></a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 mt-2 selection" style="height:300px; background-image:url('../pictures/kids.jpg');padding:0">
                 <h2 class='text-warning'>DECA</h2>
-                <div>
+                <div class="mt-3">
                     <?php
                         if($result){
                             mysqli_data_seek($result, 0);
@@ -175,7 +175,7 @@
                             }
                         }
                     ?>
-                    <a href="items.php?gender=children"><button class='btn btn-large btnShop text-dark mt-3 font-weight-bold btnShow'>VIDI SVE</button></a>
+                    <a href="items.php?gender=children"><button class='btn btn-large btnShop text-dark mt-4 font-weight-bold btnShow'>VIDI SVE</button></a>
                 </div>
             </div>
         </div>
@@ -216,13 +216,13 @@
         <div class='row m-2'>
             <div class="card-columns cardsIndex">
                 <div class="card">
-                    <img class="card-img-top img-thumbnail" src="../pictures/nike1.jpg" alt="Card image cap">
+                    <img class="card-img-top img-thumbnail" src="../pictures/nike4.jpg" alt="Card image cap">
                     <div class="card-body">
                         <a href="items.php?idBrand=<?php echo $nike; ?>"><button class='btn btn-lg btn-dark font-weight-bold text-warning m-0 btn-block'>KUPI SAD</button></a> 
                     </div>
                 </div>
                 <div class="card p-3">
-                    <blockquote class="blockquote mb-0 font-weight-bold ">
+                    <blockquote class="blockquote mb-0">
                     <p>ONI KOJI TI KAŽU DA 'NE MOŽEŠ' SU SAMO UPLAŠENI DA 'HOĆEŠ'</p>
                     <footer class="blockquote-footer">
                         <small class="text-muted">
@@ -250,7 +250,7 @@
                     </blockquote>
                 </div>
                 <div class="card">
-                    <img class="card-img-top img-thumbnail" src="../pictures/adidas1.jpg" alt="Card image cap">
+                    <img class="card-img-top img-thumbnail" src="../pictures/adidas.jpg" alt="Card image cap">
                     <div class="card-body">
                         <a href="items.php?idBrand=<?php echo $adidas; ?>"><button class='btn btn-lg btn-dark font-weight-bold text-warning m-0 btn-block'>KUPI SAD</button></a>
                     </div>
@@ -259,9 +259,9 @@
                     <div class="card-body">
                         <a href="items.php?idBrand=<?php echo $puma; ?>"><button class='btn btn-lg btn-dark font-weight-bold text-warning m-0 btn-block'>KUPI SAD</button></a> 
                     </div>
-                        <img class="card-img img-thumbnail" src="../pictures/puma2.jpg" alt="Card image">
+                        <img class="card-img img-thumbnail" src="../pictures/puma6.jpg" alt="Card image">
                 </div>
-                <div class="card p-3 text-right">
+                <div class="card p-3 text-right mt-2">
                     <blockquote class="blockquote mb-0">
                     <p>Puma je brend koji je duboko ukorenjen u sportski način života.</p>
                     <footer class="blockquote-footer">
@@ -304,21 +304,21 @@
             <div class='row p-2'>
                 <div class="col-lg-4 col-sm-12 ml-0 mt-3">
                     <div class="footerSocial text-center">
-                            <h3 class='text-light mt-4'>POVEŽITE SE</h3>
-                            <p class='m-0 p-0'>
-                                <a href="#" class='m-1 d-inline-block'>
-                                    <i class="fa fa-twitter fa-lg"></i>
-                                </a>
-                                <a href="#" class='m-1 d-inline-block'>
-                                    <i class="fa fa-facebook fa-lg"></i>
-                                </a>
-                                <a href="#" class='m-1 d-inline-block'>
-                                    <i class="fa fa-instagram fa-lg"></i>
-                                </a>
-                                <a href="#" class='m-1 d-inline-block'>
-                                    <i class="fa fa-dribbble fa-lg"></i>
-                                </a>
-                            </p>
+                        <h3 class='text-light mt-4'>POVEŽITE SE</h3>
+                        <p class='m-0 p-0'>
+                            <a href="#" class='m-1 d-inline-block'>
+                                <i class="fa fa-twitter fa-lg"></i>
+                            </a>
+                            <a href="#" class='m-1 d-inline-block'>
+                                <i class="fa fa-facebook fa-lg"></i>
+                            </a>
+                            <a href="#" class='m-1 d-inline-block'>
+                                <i class="fa fa-instagram fa-lg"></i>
+                            </a>
+                            <a href="#" class='m-1 d-inline-block'>
+                                <i class="fa fa-dribbble fa-lg"></i>
+                            </a>
+                        </p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">

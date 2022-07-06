@@ -116,9 +116,6 @@ body{
 a{ 
     text-decoration: none !important;
 }
-.carousel-control-prev, .carousel-control-next{ 
-    background-color: black;
-}
 #search:focus{
     border-color:#ffc107;
     box-shadow:0 0 0 0.2rem rgba(224, 153, 38,0.3);
@@ -201,4 +198,7 @@ button.nav-link[type='submit']{
     padding-right:14px;
     border: 1px solid #dc3545;
     margin-right: 1px;
+}
+#questions, #about, #write{
+    text-shadow: 2px 2px 2px black;
 }

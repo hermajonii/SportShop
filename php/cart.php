@@ -116,7 +116,7 @@
                             $resultCart=mysqli_query($con,"call sp_showCartItems(".$user->idUser.")");
                             if(!mysqli_error($con)){
                                 if(mysqli_num_rows($resultCart)>0)
-                                    echo '<tr class="row underline text-left m-0 p-0 w-100"> <td class="col-3 col-lg-5 pl-0 border-0">ARTIKAL</td><td class="col-2 pl-0 border-0">CENA</td><td class="col-lg-1 col-3 pl-0 border-0">KOL.</td><td class="col-2 pl-0 border-0">UKUPNO</td></tr>';
+                                    echo '<tr class="row underline text-left m-0 p-0 w-100"> <td class="col-3 col-lg-5 pl-0 border-0">ARTIKAL</td><td class="col-2 pl-0 border-0">CENA</td><td class="col-lg-2 col-3 pl-0 border-0">KOL.</td><td class="col-2 pl-0 border-0">UKUPNO</td></tr>';
                                 for($i=0;$i<mysqli_num_rows($resultCart);$i++){
                                     $row=mysqli_fetch_assoc($resultCart);
                                     echo '<tr class="row underline w-100 m-0 p-0">
@@ -127,23 +127,24 @@
                                     </td>';
                                     if($row['discount']>0){
                                         $price=$row['price']*((100-intval($row['discount']))/100);
-                                        echo '<td class="m-0 p-0 pl-1 col-2 align-self-center border-0"><del>'.$row['price'].' </del> <span id="price'.$row['idItem'].'">'.$price.'</span>rsd</td>';
+                                        echo '<td class="m-0 p-0 pl-1 col-2 align-self-center border-0"><del>'.number_format($row['price'],2,".","").' </del> <span id="price'.$row['idItem'].'">'.number_format($price,2,".","").'</span>rsd</td>';
                                     }
                                     else{
                                         $price=$row['price'];
-                                        echo '<td class="p-0 m-0 pl-1 col-2 align-self-center border-0"><span id="price'.$row['idItem'].'">'.$price.'</span>rsd</td>';
+                                        echo '<td class="p-0 m-0 pl-1 col-2 align-self-center border-0"><span id="price'.$row['idItem'].'">'.number_format($price,2,".","").'</span>rsd</td>';
                                     }
                                     $price=$row['amount']*$price;
                                     $totalPrice+=$price;
-                                    echo '<td class="col-3 col-lg-1 align-self-center border-0 p-0 m-0 text-left"><input type="number" onchange="changeAmountOfItem('.$row['idItem'].','.$row['idSize'].',this)" id="input'.$row['idItem'].'" class="text-center p-0 ml-4 ml-md-0" value="'.$row['amount'].'" max="'.$row['maximum'].'" min="1"></td><td class="m-0 p-0 col-3 align-self-center border-0"><span id="totalPrice'.$i.'">'.$price.'</span>rsd</td>
-                                    <td class="col-1 p-0 m-0 align-self-center border-0"><a class="text-dark" onclick="deleteFromCart('.$row['idItem'].','.$row['idSize'].')"><i class="fa fa-trash fa-2x text-danger" aria-hidden="true""></i></a></td></tr>';
+                                    echo '<td class="col-3 col-lg-2 align-self-center border-0 p-0 m-0 text-left"><input type="number" onchange="changeAmountOfItem('.$row['idItem'].','.$row['idSize'].',this)" id="input'.$row['idItem'].'" class="text-center p-0" value="'.$row['amount'].'" max="'.$row['maximum'].'" min="1"></td><td class="m-0 p-0 col-3 align-self-center border-0"><span id="totalPrice'.$i.'">'.number_format($price,2,".","").'</span>rsd 
+                                    <a class="text-dark ml-5" onclick="deleteFromCart('.$row['idItem'].','.$row['idSize'].')"><i class="fa fa-trash fa-2x text-danger" aria-hidden="true""></i></a></td>
+                                    </tr>';
                                     
                                     array_push($items,$row);
                                     $items[$i]['idItem']=$row['idItem'];    
                                 }
                                 closeConnection($con);
                                 if(mysqli_num_rows($resultCart)>0)
-                                    echo '<tr class="row text-right mr-2"><td class="border-0 font-weight-bold col-12">UKUPNA CENA: <span id="totalPriceAll">'.$totalPrice.'</span>rsd</td></tr>';
+                                    echo '<tr class="row text-right mr-2"><td class="border-0 font-weight-bold col-12">UKUPNA CENA: <span id="totalPriceAll">'.number_format($totalPrice,2,".","").'</span>rsd</td></tr>';
                                 else 
                                     echo '<div class="alert col-12 p-3 mt-3 alert-dismissible fade show" style="background-color: rgba(54, 201, 170,0.3)" role="alert"><strong>Vaša korpa je prazna!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';;
                             }
@@ -162,78 +163,78 @@
                 </button>
                 <div class="modal fade" id="myModal">
                     <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h4 class="modal-title">Da li ste sigurni da hoćete da kupite?</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body p-0">
-                            <div class='container-fluid p-0'>
-                                <table id='itemsModal'>
-                                    <?php
-                                        $totalPrice=0;
-                                        for($i=0;$i<count($items);$i++){
-                                            echo '
-                                            <tr class="ml-0 pl-0 w-100 row">
-                                                <td class="col-4 col-md-6 border-0 m-0 align-self-center">
-                                                    <div class="row align-self-center">
-                                                    <img src="../pictures/'.$items[$i]['urlPicture'].'" alt="" class="align-self-center p-0 col-12 col-md-4 img">
-                                                    <span class="col-12 col-md-7 p-0 align-self-center text-center">
-                                                        <small class="font-weight-bold">'.$items[$i]['nameItem'].'<br>
-                                                        Veličina: '.$items[$i]['size'].'
-                                                        </small>
-                                                    </span>
-                                                    </div>
-                                                </td>';
-                                            if($items[$i]['discount']>0){
-                                                $price=$items[$i]['price']*((100-intval($items[$i]['discount']))/100);
-                                                echo '<td class="m-0 p-0 col-3 col-md-2 border-0 align-self-center pb-4"><del>'.$items[$i]['price'].'</del><br> '.$price.'rsd</td>';
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Da li ste sigurni da hoćete da kupite?</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body p-0">
+                                <div class='container-fluid p-0'>
+                                    <table id='itemsModal'>
+                                        <?php
+                                            $totalPrice=0;
+                                            for($i=0;$i<count($items);$i++){
+                                                echo '
+                                                <tr class="ml-0 pl-0 w-100 row">
+                                                    <td class="col-4 col-md-6 border-0 m-0 align-self-center">
+                                                        <div class="row align-self-center">
+                                                        <img src="../pictures/'.$items[$i]['urlPicture'].'" alt="" class="align-self-center p-0 col-12 col-md-4 img">
+                                                        <span class="col-12 col-md-7 p-0 align-self-center text-center">
+                                                            <small class="font-weight-bold">'.$items[$i]['nameItem'].'<br>
+                                                            Veličina: '.$items[$i]['size'].'
+                                                            </small>
+                                                        </span>
+                                                        </div>
+                                                    </td>';
+                                                if($items[$i]['discount']>0){
+                                                    $price=round($items[$i]['price']*((100-intval($items[$i]['discount']))/100),2);
+                                                    echo '<td class="m-0 p-0 col-3 col-md-2 border-0 align-self-center pb-4"><del>'.number_format($items[$i]['price'],2,".","").'</del><br> '.number_format($price,2,".","").'rsd</td>';
+                                                }
+                                                else{
+                                                    $price=round($items[$i]['price'],2);
+                                                    echo '<td class="p-0 m-0 col-3 col-md-2 border-0 align-self-center">'.number_format($price,2,".","")   .'rsd</td>';
+                                                }
+                                                $price=round($items[$i]['amount']*$price,2);
+                                                $totalPrice+=$price;
+                                                echo '<td class="col-2 border-0 p-0 m-0 text-left align-self-center"> 
+                                                        <b>x'.$items[$i]['amount'].'=</b> 
+                                                    </td>
+                                                    <td class="m-0 p-0 col-2 border-0 align-self-center">'.number_format($price,2,".","")  .'rsd
+                                                    </td>
+                                            </tr>';
                                             }
-                                            else{
-                                                $price=$items[$i]['price'];
-                                                echo '<td class="p-0 m-0 col-3 col-md-2 border-0 align-self-center">'.$price.'rsd</td>';
-                                            }
-                                            $price=$items[$i]['amount']*$price;
-                                            $totalPrice+=$price;
-                                            echo '<td class="col-2 border-0 p-0 m-0 text-left align-self-center"> 
-                                                    <b>x'.$items[$i]['amount'].'=</b> 
-                                                </td>
-                                                <td class="m-0 p-0 col-2 border-0 align-self-center">'.$price.'rsd
-                                                </td>
-                                        </tr>';
-                                        }
+                                        ?>
+                                    </table>
+                                </div>
+                                <?php 
+                                    echo "<span class='float-right pr-2'><b>Ukupna cena: </b><span id='totalPriceModal'>".number_format($totalPrice,2,".","")."</span>rsd</span>";
+                                ?>
+                                <div class='mt-5 pl-2'>
+                                    <b>Adresa dostave: </b>
+                                    <?php 
+                                        $user=unserialize($_SESSION['user']);
+                                        echo $user->address;
                                     ?>
-                                </table>
+                                    <br>
+                                    <b>Kontakt telefon: </b>
+                                    <?php 
+                                        echo $user->phoneNumber;
+                                    ?>
+                                    <br><b>E-mail: </b>
+                                    <?php 
+                                        echo $user->email;
+                                    ?>
+                                </div>
                             </div>
-                            <?php 
-                                echo "<span class='float-right pr-2'><b>Ukupna cena: </b><span id='totalPriceModal'>".$totalPrice."</span>rsd</span>";
-                            ?>
-                            <div class='mt-5 pl-2'>
-                                <b>Adresa dostave: </b>
-                                <?php 
-                                    $user=unserialize($_SESSION['user']);
-                                    echo $user->address;
-                                ?>
-                                <br>
-                                <b>Kontakt telefon: </b>
-                                <?php 
-                                    echo $user->phoneNumber;
-                                ?>
-                                <br><b>E-mail: </b>
-                                <?php 
-                                    echo $user->email;
-                                ?>
+                            <div class="modal-footer">
+                            <button class='btn btnShow font-weight-bold btnShop float-left' data-dismiss='modal'>
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i> NASTAVI SA KUPOVINOM
+                            </button>
+                            <button class='btn font-weight-bold btn-danger btnShow float-right' id='purchase' data-dismiss='modal'>NARUČI SAD
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </button>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                        <button class='btn btnShow font-weight-bold btnShop float-left' data-dismiss='modal'>
-                            <i class="fa fa-arrow-left" aria-hidden="true"></i> NASTAVI SA KUPOVINOM
-                        </button>
-                        <button class='btn font-weight-bold btn-danger btnShow float-right' id='purchase' data-dismiss='modal'>NARUČI SAD
-                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                        </button>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -243,21 +244,21 @@
                 <div class='row p-2'>
                     <div class="col-lg-4 col-sm-12 ml-0 mt-3">
                         <div class="footerSocial text-center">
-                                <h3 class='text-light mt-4'>POVEŽITE SE</h3>
-                                <p class='m-0 p-0'>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-twitter fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-facebook fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-instagram fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-dribbble fa-lg"></i>
-                                    </a>
-                                </p>
+                            <h3 class='text-light mt-4'>POVEŽITE SE</h3>
+                            <p class='m-0 p-0'>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-twitter fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-facebook fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-instagram fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-dribbble fa-lg"></i>
+                                </a>
+                            </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">
@@ -304,9 +305,13 @@
                     for(i=0;i<items.length;i++)
                         if(items[i]['idItem']==idItem && items[i]['idSize']==size){
                             items[i]['amount']=amount;
-                            document.getElementById("totalPrice"+i+"").innerHTML=items[i]['amount']*items[i]['price'];
+                            if(items[i]['discount']>0)
+                                document.getElementById("totalPrice"+i+"").innerHTML=(items[i]['amount']*items[i]['price']*((100-parseInt(items[i]['discount']))/100)).toFixed(2);
+                            else
+                                document.getElementById("totalPrice"+i+"").innerHTML=items[i]['amount']*items[i]['price'];
+                            listItems()
                         }
-                    listItems()
+                   
                 }) 
             }
         }
@@ -314,8 +319,8 @@
             var totalPrice=0
             for(i=0;i<items.length;i++)
                 totalPrice+=items[i]['amount']*(items[i]['price']- items[i]['price']/100*items[i]['discount']);
-            document.getElementById('totalPriceAll').innerHTML=totalPrice
-            document.getElementById('totalPriceModal').innerHTML=totalPrice
+            document.getElementById('totalPriceAll').innerHTML=totalPrice.toFixed(2)
+            document.getElementById('totalPriceModal').innerHTML=totalPrice.toFixed(2)
         }
         function deleteFromCart(idItem, idSize){
             $.post("tasks.php?task=delectItemFromCart",{idItem: idItem, idSize:idSize},function(e){
@@ -333,24 +338,24 @@
         function listItems(){
             str=""; strModal=""; 
                 if(items.length>0)
-                    str+='<tr class="row underline text-left m-0 p-0 w-100"> <td class="col-3 col-lg-5 pl-0 border-0">ARTIKAL</td><td class="col-2 pl-0 border-0">CENA</td><td class="col-lg-1 col-3 pl-0 border-0">KOL.</td><td class="col-2 pl-0 border-0">TOTAL</td></tr>';
+                    str+='<tr class="row underline text-left m-0 p-0 w-100"> <td class="col-3 col-lg-5 pl-0 border-0">ARTIKAL</td><td class="col-2 pl-0 border-0">CENA</td><td class="col-lg-2 col-3 pl-0 border-0">KOL.</td><td class="col-2 pl-0 border-0">UKUPNO</td></tr>';
                 for(i=0;i<items.length;i++){
                     if(items[i]!=undefined){
                         str+='<tr class="row underline ml-0 pl-0 w-100"><td class="col-3 col-lg-5 m-0 p-0 row border-0"><img src="../pictures/'+items[i]['urlPicture']+'" alt="" class="p-0 col-12 col-lg-4">';
                         str+='<p class="col-lg-8 col-12 align-self-center p-0"><a href="item.php?item='+items[i]['idItem']+'" class="text-dark align-self-center">'+items[i]['nameItem']+'</a><br>Veličina: '+items[i]['size']+'</p></td>';
                         strModal+='<tr class="ml-0 pl-0 w-100 row"><td class="col-5 col-md-6 border-0 m-0 align-self-center"><div class="row align-self-center"><img src="../pictures/'+items[i]['urlPicture']+'" alt="" class="p-0 col-12 col-md-4 img align-self-center"><span class="col-12 col-md-7 text-center align-self-center"><small class="font-weight-bold">'+items[i]['nameItem']+'<br>Veličina: '+items[i]['size']+'</small></span></div></td>';
                         if(items[i]['discount']>0){
-                            price=items[i]['price']*((100-parseInt(items[i]['discount']))/100);
+                            price=(items[i]['price']*((100-parseInt(items[i]['discount']))/100)).toFixed(2);
                             str+='<td class="m-0 p-0 pl-1 col-2 align-self-center border-0"><del>'+items[i]['price']+'</del> <span id="price'+items[i]['idItem']+'">'+price+'</span>rsd</td>';
                             strModal+='<td class="m-0 p-0 col-2 border-0 align-self-center pb-4"><del>'+items[i]['price']+'</del><br> '+price+'rsd</td>';
                         }
                         else{
-                            price=items[i]['price'];
+                            price=(items[i]['price']*1).toFixed(2);
                             str+='<td class="p-0 m-0 pl-1 col-2 align-self-center border-0"><span id="price'+items[i]['idItem']+'">'+price+'</span>rsd</td>';
                             strModal+='<td class="p-0 m-0 col-2 border-0 align-self-center">'+price+'rsd</td>';
                         }
-                        price=items[i]['amount']*price;
-                        str+='<td class="col-3 col-lg-1 text-left border-0 p-0 m-0 text-left align-self-center"><input type="number" onchange="changeAmountOfItem('+items[i]['idItem']+','+items[i]['idSize']+',this)" id="input'+items[i]['idItem']+'" class="text-center p-0 ml-md-0 ml-4" value="'+items[i]['amount']+'" max="'+items[i]['maximum']+'" min="1"></td><td class="m-0 p-0 col-3 align-self-center border-0"><span id="totalPrice'+i+'">'+price+'</span>rsd</td><td class="col-1 p-0 m-0 align-self-center border-0"><a class="text-dark" onclick="deleteFromCart('+items[i]['idItem']+','+items[i]['idSize']+')"><i class="fa fa-trash fa-2x text-danger" aria-hidden="true""></i></a></td></tr>';
+                        price=(items[i]['amount']*price).toFixed(2);
+                        str+='<td class="col-3 col-lg-2 text-left border-0 p-0 m-0 text-left align-self-center"><input type="number" onchange="changeAmountOfItem('+items[i]['idItem']+','+items[i]['idSize']+',this)" id="input'+items[i]['idItem']+'" class="text-center p-0 ml-md-0 ml-4" value="'+items[i]['amount']+'" max="'+items[i]['maximum']+'" min="1"></td><td class="m-0 p-0 col-3 align-self-center border-0"><span id="totalPrice'+i+'">'+price+'</span>rsd<a class="text-dark ml-5" onclick="deleteFromCart('+items[i]['idItem']+','+items[i]['idSize']+')"><i class="fa fa-trash fa-2x text-danger" aria-hidden="true""></i></a></td></tr>';
                         strModal+='<td class="col-2 border-0 p-0 m-0 text-left align-self-center"><b>x'+items[i]['amount']+'=</b></td><td class="m-0 p-0 col-2 border-0 align-self-center">'+price+'rsd</td></tr>';      
                     }
                 }

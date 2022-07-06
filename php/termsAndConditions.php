@@ -681,21 +681,21 @@
                 <div class='row p-2'>
                     <div class="col-lg-4 col-sm-12 ml-0 mt-3">
                         <div class="footerSocial text-center">
-                                <h3 class='text-light mt-4'>POVEŽITE SE</h3>
-                                <p class='m-0 p-0'>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-twitter fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-facebook fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-instagram fa-lg"></i>
-                                    </a>
-                                    <a href="#" class='m-1 d-inline-block'>
-                                        <i class="fa fa-dribbble fa-lg"></i>
-                                    </a>
-                                </p>
+                            <h3 class='text-light mt-4'>POVEŽITE SE</h3>
+                            <p class='m-0 p-0'>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-twitter fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-facebook fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-instagram fa-lg"></i>
+                                </a>
+                                <a href="#" class='m-1 d-inline-block'>
+                                    <i class="fa fa-dribbble fa-lg"></i>
+                                </a>
+                            </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-12 col-lg-4 mb-md-0 mt-3 mb-3">

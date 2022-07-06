@@ -3,11 +3,11 @@
 
     $patternName='/^[A-ZČĆŠĐŽ]{1}[a-zčćžđš]{1,14}+(\ [A-ZČĆŠĐŽ]{1}[a-zčćžđš]{1,14})*$/';
     $patternUsernamePassword='/^[A-Za-z0-9ČĆŠĐŽčćžđš]{8,}$/';
-    $patternAddress='#^[A-Za-z0-9\/ ČĆŠĐŽčćžđš]{1,30}$#';
+    $patternAddress='#^[A-Za-z0-9\/\, ČĆŠĐŽčćžđš]{1,70}$#';
     $patternPhone='#^06[0-9]{1}\/[0-9]{3}-[0-9]{3,4}$#';
     $patternCategory='#^[A-Za-z ČĆŠĐŽčćžđš]{2,30}$#';
     $patternItemName='#^[A-Za-z 0-9-ČĆŠĐŽčćžđš\.]{2,50}$#';
-    $patternComment='#^[A-Za-z 0-9--?!\.ČĆŠĐŽčćžđš]{2,100}$#';
+    $patternComment='#^[A-Za-z\,\. 0-9--?!\.ČĆŠĐŽčćžđš]{2,100}$#';
     $cookie="";
     //account
     if($_GET['task']=='logIn'){
